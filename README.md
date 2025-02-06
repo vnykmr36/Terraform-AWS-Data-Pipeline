@@ -1,4 +1,4 @@
-# Terraform to deploy multiple AWS resources
+# Terraform to setup Data lake in AWS
 
 Within this code package, we launch a multitude of services where an entire data pipeline is laid after we provision required infrastructure.
 
