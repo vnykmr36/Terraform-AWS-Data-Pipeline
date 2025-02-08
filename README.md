@@ -18,10 +18,16 @@ Data pipeline is set for full data migration along with change data replication 
 Before proceeding with resource launch, following details need to be changed for successful deployments 
 
 Bucket name: tfm_aws_deploy/modules/S3/main.tf
+
 Backend Bucket details in
 - tfm_aws_deploy/backend-setup/dev.tfbackend
 - tfm_aws_deploy/backend-setup/qa.tfbackend
 - tfm_aws_deploy/backend-setup/prod.tfbackend
+
+IAM roles expected for admin and user roles in key_admin variable where existing IAM roles to be provided
+- tfm_aws_deploy/environment/dev.tfvars
+- tfm_aws_deploy/environment/qa.tfvars
+- tfm_aws_deploy/environment/prod.tfvars
 
 ## Deploy Instructions
 
@@ -32,4 +38,4 @@ Backend Bucket details in
 
 ## Delete Instruction
 
-- terraform destroy -var-file=environment/$environment.tfvars
+- $ terraform destroy -var-file=environment/$environment.tfvars

@@ -27,8 +27,8 @@ common_tags = {
 }
 
 key_admin = {
-  admin = "DBEngg"
-  user  = "OpsTeam"
+  admin = "<Key Admin>"
+  user  = "Key user"
 }
 
 dms_details = {
