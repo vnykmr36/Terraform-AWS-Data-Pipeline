@@ -1,0 +1,64 @@
+{
+  "rules": [
+    {
+      "rule-type": "selection",
+      "rule-id": "1",
+      "rule-name": "1",
+      "object-locator": {
+        "schema-name": "%",
+        "table-name": "%"
+      },
+      "rule-action": "include"
+    },
+    {
+      "rule-type": "transformation",
+      "rule-id": "2",
+      "rule-name": "2",
+      "rule-target": "column",
+      "object-locator": {
+        "schema-name": "%",
+        "table-name": "%"
+      },
+      "rule-action": "add-column",
+      "value": "COMMIT_TIMESTAMP",
+      "expression": "$AR_H_COMMIT_TIMESTAMP",
+      "data-type": {
+        "type": "datetime"
+      }
+    },
+    {
+      "rule-type": "transformation",
+      "rule-id": "3",
+      "rule-name": "3",
+      "rule-target": "column",
+      "object-locator": {
+        "schema-name": "%",
+        "table-name": "%"
+      },
+      "rule-action": "add-column",
+      "value": "OPERATION",
+      "expression": "operation_indicator('D', 'U', 'I')",
+      "data-type": {
+        "type": "string",
+        "length": 1
+      }
+    },
+    {
+      "rule-type": "transformation",
+      "rule-id": "4",
+      "rule-name": "4",
+      "rule-target": "column",
+      "object-locator": {
+        "schema-name": "%",
+        "table-name": "%"
+      },
+      "rule-action": "add-column",
+      "value": "STREAM_POSITION",
+      "expression": "$AR_H_STREAM_POSITION",
+      "data-type": {
+        "type": "string",
+        "length": 80
+      }
+    }
+  ]
+}

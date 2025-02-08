@@ -2,13 +2,34 @@
 
 Within this code package, we launch a multitude of services where an entire data pipeline is laid after we provision required infrastructure.
 
-List of services launched:
+## List of services launched:
 
-- VPC
-- IAM
+- VPC(Public and Private Subnets, Route tables, NACLs and Security Group and VPC endpoints)
+- IAM(Policy and Roles)
 - EC2
-- RDS
+- RDS(Subnet group, Parameter group and RDS Instance)
 - S3
-- DMS
+- DMS(Subnet group, Replication Instance, Endpoints and Task)
 
-Data pipeline to set full data and change data replication on to a S3 data lake where downstream can be used for analysis.
+Data pipeline is set for full data migration along with change data replication on to S3 data lake in Parquet format for data processing by downstream.
+
+## Configration changes:
+
+Before proceeding with resource launch, following details need to be changed for successful deployments 
+
+Bucket name: tfm_aws_deploy/modules/S3/main.tf
+Backend Bucket details in
+- tfm_aws_deploy/backend-setup/dev.tfbackend
+- tfm_aws_deploy/backend-setup/qa.tfbackend
+- tfm_aws_deploy/backend-setup/prod.tfbackend
+
+## Deploy Instructions
+
+- export environment="dev"
+- $ terraform init -var-file=environment/$environment.tfvars -backend-config=backend-setup/$environment.tfbackend -backend=true
+- $ terraform plan -var-file=environment/$environment.tfvars  
+- $ terraform apply -var-file=environment/$environment.tfvars 
+
+## Delete Instruction
+
+- terraform destroy -var-file=environment/$environment.tfvars
