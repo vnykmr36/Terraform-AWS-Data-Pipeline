@@ -30,12 +30,13 @@ IAM roles expected for admin and user roles in key_admin variable where existing
 - tfm_aws_deploy/environment/prod.tfvars
 
 ## Deploy Instructions
-
-- $ export environment="dev"
-- $ terraform init -var-file=environment/$environment.tfvars -backend-config=backend-setup/$environment.tfbackend -backend=true
-- $ terraform plan -var-file=environment/$environment.tfvars  
-- $ terraform apply -var-file=environment/$environment.tfvars 
-
+```
+$ export environment="dev"
+$ terraform init -var-file=environment/$environment.tfvars -backend-config=backend-setup/$environment.tfbackend -backend=true
+$ terraform plan -var-file=environment/$environment.tfvars  
+$ terraform apply -var-file=environment/$environment.tfvars 
+```
 ## Delete Instruction
-
-- $ terraform destroy -var-file=environment/$environment.tfvars
+```
+$ terraform destroy -var-file=environment/$environment.tfvars
+```
