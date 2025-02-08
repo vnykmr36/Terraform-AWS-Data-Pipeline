@@ -31,7 +31,7 @@ IAM roles expected for admin and user roles in key_admin variable where existing
 
 ## Deploy Instructions
 
-- export environment="dev"
+- $ export environment="dev"
 - $ terraform init -var-file=environment/$environment.tfvars -backend-config=backend-setup/$environment.tfbackend -backend=true
 - $ terraform plan -var-file=environment/$environment.tfvars  
 - $ terraform apply -var-file=environment/$environment.tfvars 
