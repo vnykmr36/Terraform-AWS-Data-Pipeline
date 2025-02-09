@@ -1,3 +1,4 @@
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fvnykmr36%2FTerraform-AWS-Data-Pipeline&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 # Data lake setup within AWS
 
 Within this code package, we launch a multitude of services where an entire data pipeline is laid after we provision required infrastructure.
